@@ -1000,6 +1000,9 @@ public class DefaultGenerator extends AbstractGenerator implements Generator {
             }
             if (mapping != null) {
                 im.put("import", mapping);
+                if(config.importMapping().get(mapping) != null){
+                    im.put("import", config.importMapping().get(mapping));
+                }
                 if (!imports.contains(im)) { // avoid duplicates
                     imports.add(im);
                 }
